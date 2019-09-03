@@ -139,9 +139,9 @@ if __name__ == "__main__":
             #log_str += f"\nTotal loss {loss.item()}"
 
             # Determine approximate time left for epoch
-            epoch_batches_left = len(dataloader) - (batch_i + 1)
-            time_left = datetime.timedelta(seconds=epoch_batches_left * (time.time() - start_time) / (batch_i + 1))
-            log_str += f"\n---- ETA {time_left}"
+            #epoch_batches_left = len(dataloader) - (batch_i + 1)
+            #time_left = datetime.timedelta(seconds=epoch_batches_left * (time.time() - start_time) / (batch_i + 1))
+            #log_str += f"\n---- ETA {time_left}"
 
             #print(log_str)
 
