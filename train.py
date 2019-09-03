@@ -174,12 +174,12 @@ if __name__ == "__main__":
             print(AsciiTable(ap_table).table)
             print(f"---- mAP {AP.mean()}")
 			
-        if epoch == 20:
+		if epoch == 20:
 			torch.save(model.state_dict(), f"checkpoints/yolov3_ckpt_%d.pth" % epoch)
-			
+		
 		if epoch == 40:
 			torch.save(model.state_dict(), f"checkpoints/yolov3_ckpt_%d.pth" % epoch)
-			
+		
 		if epoch == 60:
 			torch.save(model.state_dict(), f"checkpoints/yolov3_ckpt_%d.pth" % epoch)
 			
