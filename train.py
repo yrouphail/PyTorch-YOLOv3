@@ -147,7 +147,7 @@ if __name__ == "__main__":
 
             model.seen += imgs.size(0)
 
-        if epoch == 10:
+        if epoch == 100:
             print("\n---- Evaluating Model ----")
             # Evaluate the model on the validation set
             precision, recall, AP, f1, ap_class = evaluate(
@@ -174,5 +174,5 @@ if __name__ == "__main__":
             print(AsciiTable(ap_table).table)
             print(f"---- mAP {AP.mean()}")
 
-        if epoch == 10:
+        if epoch == 1:
             torch.save(model.state_dict(), f"checkpoints/yolov3_ckpt_%d.pth" % epoch)
