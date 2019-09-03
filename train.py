@@ -147,7 +147,7 @@ if __name__ == "__main__":
 
             model.seen += imgs.size(0)
 
-        if epoch == 50:
+        if epoch == 100:
             print("\n---- Evaluating Model ----")
             # Evaluate the model on the validation set
             precision, recall, AP, f1, ap_class = evaluate(
@@ -166,13 +166,13 @@ if __name__ == "__main__":
                 ("val_f1", f1.mean()),
             ]
             logger.list_of_scalars_summary(evaluation_metrics, epoch)
-			
-			# Print class APs and mAP
+
+            # Print class APs and mAP
             ap_table = [["Index", "Class name", "AP"]]
             for i, c in enumerate(ap_class):
                 ap_table += [[c, class_names[c], "%.5f" % AP[i]]]
             print(AsciiTable(ap_table).table)
             print(f"---- mAP {AP.mean()}")
-			
-		if epoch == 100:
-			torch.save(model.state_dict(), f"checkpoints/yolov3_ckpt_%d.pth" % epoch)
+
+        if epoch == 100:
+            torch.save(model.state_dict(), f"checkpoints/yolov3_ckpt_%d.pth" % epoch)
